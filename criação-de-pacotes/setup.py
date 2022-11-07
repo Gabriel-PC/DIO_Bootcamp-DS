@@ -12,7 +12,7 @@ setup(
     version="0.0.1",
     author="Gabriel-PC",
     author_email="my_email",
-    description="My short description",
+    description="Teste para criação de pacotes",
     long_description=page_description,
     long_description_content_type="text/markdown",
     url="my_github_repository_project_link"
