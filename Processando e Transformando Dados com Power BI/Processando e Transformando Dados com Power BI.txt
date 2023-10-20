@@ -1,0 +1,24 @@
+== Descrição de Etapas ==
+
+Inicial:
+- Foi criada a conta Azure, porém o Single Server instances foi descontinuado
+- A Base e os Scripts do Github foram copiados e modificados para uso (verificação/alteração das constraint)
+- Alteração na inserção de dados SQL (Super_ssn na table employee)
+- Verificação dos selects
+- Integração Power BI com MySQL workbench
+
+Transformação:
+- Modificados os dados de locais (MySQL) para o formato Bing - "Rua (quando houver), Bairro, Estado número, País"
+- Verificados dados e tipo, alterado valores monetários e atribuído "Local" em "Categoria de Dados" para geolocalização
+- O único 'gerente' sem 'gerente' é o 'gerente geral' por assim dizer, ou dono quem sabe, sem prejuízo
+- Todos os locais possuem gerente
+- A coluna complexa de Local não foi separada para preservar a geolocalização correta, porém foi testada segregada
+- As horas de projeto foram apresentadas no relatório
+- Departamentos e localicação foram mesclados
+- Não podem ser 'apenas' acrescentados por consulta porque isto apenas acrescenta as linhas sem verificar correspondência entre as chaves, apenas pelo nome da coluna, criando ainda muitos pontos nulos
+- Foi mesclada employee e departament, depois mesclado project, por último works_on
+- Gerado dados com duplicidade, já que "Research" possui três locais com projetos diferentes
+- Foi criado uma coluna para filtrar o project com works_on para correspondência de trabalho
+- Foram filtrados os valores sem correspondência e as colunas auxiliares foram deletadas
+OBS: Tentar filtrar diretamento (para não haver duplicidades) com auxilio "Editor Avançado" foi infrutífero, apesar do aprendizado
+- A relação funcionário e gerente foi explicitada no relatório sem mesclas, mas com Segmentação
